@@ -1,0 +1,61 @@
+@import url("https://fonts.cdnfonts.com/css/maison-neue");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.header {
+  margin: 30px 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  column-gap: 50px;
+  align-items: center;
+}
+
+nav a {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+button img {
+  width: 20px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+button:first-child {
+  border: 0.5px solid black;
+  border-radius: 20px;
+  padding: 7px 9px;
+  background-color: rgb(217, 226, 195);
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+.clothing {
+  width: 100vw;
+}
