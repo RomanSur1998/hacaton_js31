@@ -4,13 +4,16 @@ import basket from "../Images/basket.svg";
 import search from "../Images/search.svg";
 import user from "../Images/User.svg";
 import clothing from "../Images/clothing.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
       <div className="header">
         <nav>
-          <h1>UGMONK</h1>
+          <Link to="/">
+            <h1>UGMONK</h1>
+          </Link>
           <a href="">Clothing +</a>
           <a href="">Objects +</a>
           <a href="">Best sellers</a>
