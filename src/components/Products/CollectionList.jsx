@@ -9,7 +9,7 @@ const CollectionList = () => {
   useEffect(() => {
     getCards();
   }, []);
-
+  // ! а вот та часть которой не хватало
   const cards = searchResults.length ? searchResults : collection;
 
   return (
