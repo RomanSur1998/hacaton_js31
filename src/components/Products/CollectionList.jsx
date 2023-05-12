@@ -3,12 +3,14 @@ import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
 
 const CollectionList = () => {
-  const { getCards, collection } = useContext(collectionContext);
+  const { getCards, collection, searchResults } = useContext(collectionContext);
   console.log(collection);
 
   useEffect(() => {
     getCards();
   }, []);
+  // ! а вот та часть которой не хватало
+  const cards = searchResults.length ? searchResults : collection;
 
   return (
     <>
@@ -19,7 +21,7 @@ const CollectionList = () => {
           justifyContent: "space-evenly",
         }}
       >
-        {collection.map((item) => (
+        {cards.map((item) => (
           <CollectionCard item={item} />
         ))}
       </div>

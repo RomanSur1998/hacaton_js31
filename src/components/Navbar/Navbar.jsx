@@ -1,13 +1,16 @@
 import React from "react";
 import "./navbar.css";
 import basket from "../Images/basket.svg";
-import search from "../Images/search.svg";
+// import search from "../Images/search.svg";
 import user from "../Images/User.svg";
 import clothing from "../Images/clothing.png";
 import { Link, useNavigate } from "react-router-dom";
+import { collectionContext } from "../../context/CollectionContextProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { searchCards, searchTerm } = useContext(collectionContext);
   return (
     <div>
       <div className="header">
@@ -17,16 +20,12 @@ const Navbar = () => {
           </Link>
           <a href="">Clothing +</a>
           <a href="">Objects +</a>
-          <a href="">Best sellers</a>
           <Link to="/add">
-            <a href="">Add Product</a>s
+            <a href="">Add Product</a>
           </Link>
         </nav>
         <div className="btns">
-          <input type="text" />
-          <button>
-            <img src={search} alt="" />
-          </button>
+          <input type="text" className="search" onChange={searchCards} />
           <button>
             <img src={user} alt="" />
           </button>
