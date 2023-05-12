@@ -8,16 +8,28 @@ import Typography from "@mui/material/Typography";
 
 import { collectionContext } from "../../context/CollectionContextProvider";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function CollectionCard({ item }) {
   const navigate = useNavigate();
   const { deleteCard } = React.useContext(collectionContext);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovered(false);
+  };
   return (
     <Card sx={{ width: 345, margin: 3 }}>
       <CardMedia
         sx={{ height: 350 }}
-        image={item.image_1}
+        image={isHovered ? item.image_2 : item.image_1}
         title="green iguana"
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
