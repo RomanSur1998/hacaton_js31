@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import classes from "../Products/Add.module.css";
+import classes from "../Products/styles/Add.module.css";
 
 export default function AddProduct() {
   return (

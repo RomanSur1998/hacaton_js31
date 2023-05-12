@@ -3,15 +3,14 @@ import React, { createContext, useState } from "react";
 export const collectionContext = createContext();
 
 const CollectionContextProvider = ({ children }) => {
-  const [state, setState] = useState([])
+  const [collection, setCollection] = useState([]);
   async function getCards() {
-    let { data } = await axios('http://localhost:8000/clothes');
-    setState(state)
-    console.log(data);
+    let { data } = await axios("http://localhost:8000/1");
+
+    setCollection(data);
   }
-  getCards()
-  
-  const values = { getCards };
+
+  const values = { getCards, collection };
   return (
     <collectionContext.Provider value={values}>
       {children}
