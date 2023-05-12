@@ -11,7 +11,6 @@ const CollectionContextProvider = ({ children }) => {
 
   async function getCards() {
     let { data } = await axios(JSON_API_CLOTHES);
-
     setCollection(data);
   }
 
