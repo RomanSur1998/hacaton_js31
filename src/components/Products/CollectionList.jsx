@@ -2,8 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { collectionContext } from "../../context/CollectionContextProvider";
 
 const CollectionList = () => {
-  const { getCards } = useContext(collectionContext);
-  console.log(getCards);
+  const { getCards, collection } = useContext(collectionContext);
+  console.log(collection);
+
   useEffect(() => {
     getCards();
   }, []);
