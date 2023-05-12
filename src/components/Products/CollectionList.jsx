@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { collectionContext } from "../../context/CollectionContextProvider";
 
 const CollectionList = () => {
-  return <div>CollectionList dfkgjflgjdflgjdlfkgdjlgkfdlkgjfdkl</div>;
+  const { getCards } = useContext(collectionContext);
+  console.log(getCards);
+  useEffect(() => {
+    getCards();
+  }, []);
+  return <div>CollectionList</div>;
 };
 
 export default CollectionList;
