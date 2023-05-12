@@ -5,7 +5,7 @@ export const collectionContext = createContext();
 const CollectionContextProvider = ({ children }) => {
   const [collection, setCollection] = useState([]);
   async function getCards() {
-    let { data } = await axios("  http://localhost:8000/1");
+    let { data } = await axios("http://localhost:8000/1");
 
     setCollection(data);
   }
