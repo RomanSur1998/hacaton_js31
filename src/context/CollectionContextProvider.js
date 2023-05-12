@@ -1,13 +1,21 @@
 import axios from "axios";
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 export const collectionContext = createContext();
+
 const CollectionContextProvider = ({ children }) => {
+  const [collection, setCollection] = useState([]);
   async function getCards() {
-    let res = await axios("  http://localhost:8000/1");
-    console.log(res);
+    let { data } = await axios("  http://localhost:8000/1");
+
+    setCollection(data);
   }
-  getCards();
-  return <collectionContext.Provider>{children}</collectionContext.Provider>;
+
+  const values = { getCards, collection };
+  return (
+    <collectionContext.Provider value={values}>
+      {children}
+    </collectionContext.Provider>
+  );
 };
 
 export default CollectionContextProvider;
