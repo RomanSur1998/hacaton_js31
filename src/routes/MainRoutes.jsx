@@ -5,6 +5,7 @@ import AuthPAge from "../components/Products/AuthPage";
 import AddProduct from "../components/Products/AddProduct";
 import EditProduct from "../components/Products/EditProduct";
 import Cart from "../components/Cart/Cart";
+import { Details } from "@mui/icons-material";
 
 const MainRoutes = () => {
   const COLLECTION_ROUTES = [
@@ -13,6 +14,7 @@ const MainRoutes = () => {
     { link: "/add", element: <AddProduct />, id: 3 },
     { link: "/edit/:id", element: <EditProduct />, id: 4 },
     { link: "/cart", element: <Cart />, id: 5 },
+    { link: "/details/:id", element: <Details />, id: 6 },
   ];
   return (
     <>
