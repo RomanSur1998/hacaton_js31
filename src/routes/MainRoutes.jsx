@@ -3,12 +3,14 @@ import CollectionList from "../components/Products/CollectionList";
 import { Route, Routes } from "react-router-dom";
 import AuthPAge from "../components/Products/AuthPage";
 import AddProduct from "../components/Products/AddProduct";
+import EditProduct from "../components/Products/EditProduct";
 
 const MainRoutes = () => {
   const COLLECTION_ROUTES = [
     { link: "/", element: <CollectionList />, id: 1 },
     { link: "/admin", element: <AuthPAge />, id: 2 },
-    { link: "/add", element: <AddProduct />, id: 2 },
+    { link: "/add", element: <AddProduct />, id: 3 },
+    { link: "/edit/:id", element: <EditProduct />, id: 4 },
   ];
   return (
     <>

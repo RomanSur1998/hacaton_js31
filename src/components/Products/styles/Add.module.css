@@ -11,6 +11,9 @@ h4 {
   width: 500px;
   margin: 10px;
 }
+.input :hover {
+  border-color: black;
+}
 .Btn {
   margin: 20px;
   width: 300px;
