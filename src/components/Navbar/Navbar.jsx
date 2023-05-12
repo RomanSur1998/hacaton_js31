@@ -23,7 +23,7 @@ const Navbar = () => {
           </Link>
         </nav>
         <div className="btns">
-          <button>Shop Analog</button>
+          <input type="text" />
           <button>
             <img src={search} alt="" />
           </button>

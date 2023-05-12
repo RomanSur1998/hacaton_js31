@@ -33,6 +33,8 @@ const CollectionContextProvider = ({ children }) => {
     const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
     setOneCard(data);
   };
+
+    
   const values = {
     getCards,
     collection,
