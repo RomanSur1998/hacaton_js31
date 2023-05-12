@@ -17,6 +17,9 @@ const Navbar = () => {
           <a href="">Clothing +</a>
           <a href="">Objects +</a>
           <a href="">Best sellers</a>
+          <Link to="/add">
+            <a href="">Add Product</a>s
+          </Link>
         </nav>
         <div className="btns">
           <button>Shop Analog</button>

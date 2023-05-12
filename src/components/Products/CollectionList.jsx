@@ -11,11 +11,15 @@ const CollectionList = () => {
   }, []);
   return (
     <>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-evenly",
+        }}
+      >
         {collection.map((item) => (
-          <h2>
-            <CollectionCard item={item} />
-          </h2>
+          <CollectionCard item={item} />
         ))}
       </div>
     </>

@@ -7,6 +7,7 @@ export const collectionContext = createContext();
 const CollectionContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [collection, setCollection] = useState([]);
+  const [oneCard, setOneCard] = useState({});
 
   async function getCards() {
     let { data } = await axios(JSON_API_CLOTHES);
@@ -14,8 +15,8 @@ const CollectionContextProvider = ({ children }) => {
     setCollection(data);
   }
 
-  const addCard = async (newProduct) => {
-    await axios.post(JSON_API_CLOTHES, newProduct);
+  const addCard = async (newCard) => {
+    await axios.post(JSON_API_CLOTHES, newCard);
     navigate("/");
   };
 
@@ -23,7 +24,17 @@ const CollectionContextProvider = ({ children }) => {
     await axios.delete(`${JSON_API_CLOTHES}/${id}`);
     getCards();
   };
-  const values = { getCards, collection, addCard, deleteCard };
+
+  const editCard = async (newCard) => {
+    await axios.patch(`${JSON_API_CLOTHES}/${newCard.id}`, newCard);
+    getCards();
+    navigate("/");
+  };
+  const getCardtDetails = async (id) => {
+    const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
+    setOneCard(data);
+  };
+  const values = { getCards, collection, addCard, deleteCard, editCard };
   return (
     <collectionContext.Provider value={values}>
       {children}
