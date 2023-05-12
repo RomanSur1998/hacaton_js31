@@ -16,6 +16,10 @@ export default function EditProduct() {
     getCardtDetails(id);
   }, []);
 
+  React.useEffect(() => {
+    setCard(oneCard);
+  }, [oneCard]);
+
   React.useEffect(() => {}, [oneCard]);
   console.log(card.image_1);
 
@@ -41,7 +45,6 @@ export default function EditProduct() {
       <h4>EDIT PRODUCT</h4>
       <TextField
         className={classes.input}
-        label="Image"
         margin="normal"
         variant="outlined"
         value={card.image_1}
@@ -50,7 +53,7 @@ export default function EditProduct() {
       />
       <TextField
         className={classes.input}
-        label="Image"
+        value={card.image_2}
         margin="normal"
         variant="outlined"
         name="image_2"
@@ -58,28 +61,28 @@ export default function EditProduct() {
       />
       <TextField
         className={classes.input}
-        label="Title"
+        value={card.title}
         margin="normal"
         onChange={handleInp}
         name="title"
       />
       <TextField
         className={classes.input}
-        label="Price"
+        value={card.price}
         margin="normal"
         name="price"
         onChange={handleInp}
       />
       <TextField
         className={classes.input}
-        label="Color"
+        value={card.color}
         margin="normal"
         onChange={handleInp}
         name="color"
       />
       <TextField
         className={classes.input}
-        label="Size"
+        value={card.size}
         margin="normal"
         name="size"
         onChange={handleInp}
@@ -89,6 +92,7 @@ export default function EditProduct() {
         variant="contained"
         disableElevation
         style={{ margin: "20px", backgroundColor: "black" }}
+        onClick={() => editCard(card)}
       >
         Save Card Information
       </Button>
