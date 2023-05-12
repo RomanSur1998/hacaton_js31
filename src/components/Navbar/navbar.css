@@ -44,7 +44,7 @@ button img {
   column-gap: 20px;
 }
 
-button:first-child {
+input:first-child {
   border: 0.5px solid black;
   border-radius: 20px;
   padding: 7px 9px;

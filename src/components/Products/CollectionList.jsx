@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
 
@@ -9,6 +9,7 @@ const CollectionList = () => {
   useEffect(() => {
     getCards();
   }, []);
+
   return (
     <>
       <div
