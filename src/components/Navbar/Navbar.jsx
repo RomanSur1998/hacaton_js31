@@ -4,9 +4,10 @@ import basket from "../Images/basket.svg";
 import search from "../Images/search.svg";
 import user from "../Images/User.svg";
 import clothing from "../Images/clothing.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="header">
@@ -30,7 +31,13 @@ const Navbar = () => {
             <img src={user} alt="" />
           </button>
           <button>
-            <img src={basket} alt="" />
+            <img
+              src={basket}
+              alt=""
+              onClick={() => {
+                navigate("/cart");
+              }}
+            />
           </button>
         </div>
       </div>
