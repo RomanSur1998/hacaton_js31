@@ -8,11 +8,20 @@ const CollectionContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [collection, setCollection] = useState([]);
   const [oneCard, setOneCard] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
 
   async function getCards() {
     let { data } = await axios(JSON_API_CLOTHES);
 
     setCollection(data);
+  }
+
+  async function searchCards(event) {
+    let { data } = await axios(JSON_API_CLOTHES);
+    const filteredResults = data.filter((item) =>
+      item.title.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setSearchResults(filteredResults);
   }
 
   const addCard = async (newCard) => {
@@ -35,6 +44,7 @@ const CollectionContextProvider = ({ children }) => {
     setOneCard(data);
   };
 
+
     
   const values = {
     getCards,
@@ -44,6 +54,8 @@ const CollectionContextProvider = ({ children }) => {
     editCard,
     oneCard,
     getCardtDetails,
+    searchCards,
+    searchResults
   };
   return (
     <collectionContext.Provider value={values}>
