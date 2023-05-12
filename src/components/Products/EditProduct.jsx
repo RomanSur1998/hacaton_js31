@@ -20,7 +20,6 @@ export default function EditProduct() {
     setCard(oneCard);
   }, [oneCard]);
 
-  React.useEffect(() => {}, [oneCard]);
   console.log(card.image_1);
 
   const handleInp = (e) => {
