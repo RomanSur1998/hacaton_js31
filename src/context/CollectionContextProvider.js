@@ -19,11 +19,11 @@ const CollectionContextProvider = ({ children }) => {
     navigate("/");
   };
 
-  const deleteProduct = async (id) => {
-    await axios.delete(`${JSON_API_CLOTHESs}/${id}`);
+  const deleteCard = async (id) => {
+    await axios.delete(`${JSON_API_CLOTHES}/${id}`);
     getCards();
   };
-  const values = { getCards, collection, addCard };
+  const values = { getCards, collection, addCard, deleteCard };
   return (
     <collectionContext.Provider value={values}>
       {children}
