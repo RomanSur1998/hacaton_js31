@@ -4,17 +4,20 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import classes from "../Products/styles/Add.module.css";
 import { collectionContext } from "../../context/CollectionContextProvider";
+import { useParams } from "react-router-dom";
 
 export default function EditProduct() {
-  const { addCard } = React.useContext(collectionContext);
-  const [card, setCard] = React.useState({
-    title: "",
-    price: "",
-    image_1: "",
-    image_2: "",
-    color: "",
-    size: "",
-  });
+  const { id } = useParams();
+  const { oneCard, getCardtDetails, editCard } =
+    React.useContext(collectionContext);
+  const [card, setCard] = React.useState(oneCard);
+
+  React.useEffect(() => {
+    getCardtDetails(id);
+  }, []);
+
+  React.useEffect(() => {}, [oneCard]);
+  console.log(card.image_1);
 
   const handleInp = (e) => {
     console.log(e);
@@ -41,6 +44,7 @@ export default function EditProduct() {
         label="Image"
         margin="normal"
         variant="outlined"
+        value={card.image_1}
         name="image_1"
         onChange={handleInp}
       />
@@ -85,9 +89,6 @@ export default function EditProduct() {
         variant="contained"
         disableElevation
         style={{ margin: "20px", backgroundColor: "black" }}
-        onClick={() => {
-          addCard(card);
-        }}
       >
         Save Card Information
       </Button>
