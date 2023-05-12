@@ -14,6 +14,7 @@ export default function AddProduct() {
     image_2: "",
     color: "",
     size: "",
+    decr: "",
   });
 
   const handleInp = (e) => {
@@ -78,6 +79,13 @@ export default function AddProduct() {
         label="Size"
         margin="normal"
         name="size"
+        onChange={handleInp}
+      />
+      <TextField
+        className={classes.input}
+        label="Description"
+        margin="normal"
+        name="decr"
         onChange={handleInp}
       />
       <Button

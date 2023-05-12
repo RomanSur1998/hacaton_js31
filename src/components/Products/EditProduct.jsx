@@ -23,7 +23,6 @@ export default function EditProduct() {
   console.log(card.image_1);
 
   const handleInp = (e) => {
-    console.log(e);
     if (e.target.name === "price") {
       let obj = {
         ...card,
@@ -37,12 +36,12 @@ export default function EditProduct() {
       };
       setCard(obj);
     }
-    console.log(card);
   };
   return (
     <div className={classes.AddContainer}>
       <h4>EDIT PRODUCT</h4>
       <TextField
+        style={{ border: "none" }}
         className={classes.input}
         margin="normal"
         variant="outlined"
@@ -84,6 +83,13 @@ export default function EditProduct() {
         value={card.size}
         margin="normal"
         name="size"
+        onChange={handleInp}
+      />
+      <TextField
+        className={classes.input}
+        value={card.decr}
+        margin="normal"
+        name="decr"
         onChange={handleInp}
       />
       <Button
