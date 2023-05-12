@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { collectionContext } from "../../context/CollectionContextProvider";
+import CollectionCard from "./CollectionCard";
 
 const CollectionList = () => {
   const { getCards, collection } = useContext(collectionContext);
@@ -8,7 +9,17 @@ const CollectionList = () => {
   useEffect(() => {
     getCards();
   }, []);
-  return <div>CollectionList</div>;
+  return (
+    <>
+      <div>
+        {collection.map((item) => (
+          <h2>
+            <CollectionCard item={item} />
+          </h2>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default CollectionList;
