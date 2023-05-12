@@ -4,8 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import CollectionContextProvider from "../../context/CollectionContextProvider";
 
 export default function CollectionCard() {
+  const { getCards } = React.useContext(CollectionContextProvider);
+  console.log(getCards);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
