@@ -1,7 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Pagination } from "@mui/material";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
+import Stack from "@mui/material/Stack";
 
 const CollectionList = () => {
   const { getCards, collection, searchResults } = useContext(collectionContext);
@@ -24,6 +27,24 @@ const CollectionList = () => {
     }
     return cards;
   }
+  console.log(cards);
+
+  const [page, setPage] = useState(1);
+  const itemPerPage = 6;
+  const count = Math.ceil(cards.length / itemPerPage);
+
+  const handleChange = (e, p) => {
+    setPage(p);
+  };
+
+  function currentData() {
+    const begin = (page - 1) * itemPerPage;
+
+    const end = begin + itemPerPage;
+
+    return cards.slice(begin, end);
+  }
+  console.log(currentData());
 
   return (
     <>
@@ -59,7 +80,19 @@ const CollectionList = () => {
           : filterCard(cards).map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))}
+        {currentData().map((item) => (
+          <CollectionCard item={item} />
+        ))}
       </div>
+
+      <Stack spacing={2}>
+        <Pagination
+          count={count}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChange}
+        />
+      </Stack>
     </>
   );
 };

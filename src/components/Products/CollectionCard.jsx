@@ -30,6 +30,7 @@ export default function CollectionCard({ item }) {
         title="green iguana"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
+        onClick={() => navigate(`/details/${item.id}`)}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
