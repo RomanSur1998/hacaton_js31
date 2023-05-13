@@ -19,14 +19,73 @@ const CartContextProvider = ({ children }) => {
         })
       );
       cart = {
-        products: [],
+        products: [1, 23, 4],
         totalPrice: 0,
       };
     }
     setCart(cart);
   };
 
-  const values = { getCart };
+  const addProductToCart = (product) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = { products: [], totalPrice: 0 };
+    }
+    let newProduct = {
+      item: product,
+      count: 1,
+      subPrice: +product.price,
+    };
+    let productToFind = cart.products.filter(
+      (elem) => elem.item.id === product.id
+    );
+
+    if (productToFind.length === 0) {
+      cart.products.push(newProduct);
+    } else {
+      cart.products = cart.products.filter(
+        (elem) => elem.item.id != product.id
+      );
+    }
+
+    cart.totalPrice = calcTotalPrice(cart.products);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart);
+  };
+
+  const changeProductCount = (count, id) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    cart.products = cart.products.map((product) => {
+      if (product.item.id == id) {
+        product.count = count;
+        product.subPrice = calcSubPrice(product);
+      }
+      return product;
+    });
+    cart.totalPrice = calcTotalPrice(cart.products);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart);
+  };
+  const deleteCartProduct = (id) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    cart.products = cart.products.filter((elem) => elem.item.id !== id);
+
+    cart.totalPrice = calcTotalPrice(cart.products);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart);
+  };
+
+  const values = {
+    getCart,
+    addProductToCart,
+    cart,
+    changeProductCount,
+    deleteCartProduct,
+  };
   return <cartContext.Provider value={values}>{children}</cartContext.Provider>;
 };
 

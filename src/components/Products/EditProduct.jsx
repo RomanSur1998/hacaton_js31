@@ -36,6 +36,7 @@ export default function EditProduct() {
       };
       setCard(obj);
     }
+    console.log(card);
   };
   return (
     <div className={classes.AddContainer}>

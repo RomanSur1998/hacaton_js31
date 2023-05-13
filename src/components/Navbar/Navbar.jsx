@@ -21,7 +21,7 @@ const Navbar = () => {
           <a href="">Clothing +</a>
           <a href="">Objects +</a>
           <Link to="/add">
-            <a href="">Add Product</a>
+            <p>Add Product</p>
           </Link>
         </nav>
         <div className="btns">
