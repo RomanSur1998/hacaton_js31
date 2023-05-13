@@ -16,6 +16,7 @@ const CollectionContextProvider = ({ children }) => {
     setCollection(data);
   }
 
+  // ! Поисковик
   async function searchCards(event) {
     let { data } = await axios(JSON_API_CLOTHES);
     const filteredResults = data.filter((item) =>
@@ -43,8 +44,6 @@ const CollectionContextProvider = ({ children }) => {
     const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
     setOneCard(data);
   };
-
-
     
   const values = {
     getCards,
