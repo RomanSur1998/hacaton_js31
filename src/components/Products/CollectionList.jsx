@@ -4,7 +4,6 @@ import CollectionCard from "./CollectionCard";
 
 const CollectionList = () => {
   const { getCards, collection, searchResults } = useContext(collectionContext);
-  console.log(collection);
 
   useEffect(() => {
     getCards();

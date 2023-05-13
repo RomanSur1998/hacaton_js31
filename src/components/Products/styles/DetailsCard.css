@@ -1,0 +1,24 @@
+.addBtn {
+  background-color: bisque;
+}
+.containerDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerDetails img {
+  width: 500px;
+  margin-top: 50px;
+}
+.containerDetails p {
+  width: 500px;
+  margin: 40px;
+}
+.containerDetails button {
+  width: 400px;
+  background-color: black;
+  height: 50px;
+  margin: 20px;
+  color: aliceblue;
+  border-radius: 40px;
+}
