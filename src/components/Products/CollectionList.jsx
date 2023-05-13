@@ -46,7 +46,7 @@ const CollectionList = () => {
   console.log(currentData());
 
   return (
-    <>
+    <div>
       <div>
         <select
           value={filterValue}
@@ -81,7 +81,7 @@ const CollectionList = () => {
             ))}
       </div>
 
-      <Stack spacing={2}>
+      <Stack spacing={2} style={{ margin: "40px" }}>
         <Pagination
           count={count}
           variant="outlined"
@@ -89,7 +89,7 @@ const CollectionList = () => {
           onChange={handleChange}
         />
       </Stack>
-    </>
+    </div>
   );
 };
 

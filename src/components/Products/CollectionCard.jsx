@@ -41,14 +41,20 @@ export default function CollectionCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+        <Button
+          size="small"
+          onClick={() => navigate(`/edit/${item.id}`)}
+          style={{ color: "white", backgroundColor: "#027373" }}
+        >
           Edit
         </Button>
+
         <Button
           size="small"
           onClick={() => {
             deleteCard(item.id);
           }}
+          style={{ color: "white", backgroundColor: "black" }}
         >
           Delete
         </Button>
