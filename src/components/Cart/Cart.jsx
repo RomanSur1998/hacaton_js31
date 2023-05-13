@@ -22,6 +22,7 @@ const rows = [
 ];
 
 export default function Cart() {
+  const [count, setCount] = React.useState(1);
   const cartCleaner = () => {
     localStorage.removeItem("cart");
     getCart();
@@ -56,14 +57,23 @@ export default function Cart() {
               <TableCell align="right">{row.item.title}</TableCell>
               <TableCell align="right">
                 {" "}
-                <input
-                  type="number"
-                  onChange={(e) =>
-                    changeProductCount(e.target.value, row.item.id)
-                  }
-                  value={row.count}
-                  min={1}
-                />
+                <button
+                  onClick={() => {
+                    setCount(count + 1);
+                    changeProductCount(count, row.item.id);
+                  }}
+                >
+                  +
+                </button>
+                <span>{count}</span>
+                <button
+                  onClick={() => {
+                    setCount(count - 1);
+                    changeProductCount(count, row.item.id);
+                  }}
+                >
+                  -
+                </button>
               </TableCell>
               <TableCell align="right">{row.carbs}</TableCell>
               <TableCell align="right">

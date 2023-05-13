@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import "../Products/styles/DetailsCard.css";
 import { cartContext } from "../../context/CartContextProvider";
@@ -8,6 +8,7 @@ const DetailsCard = () => {
   const { oneCard, getCardtDetails } = useContext(collectionContext);
   const { addProductToCart } = useContext(cartContext);
   const [card, setCard] = useState(oneCard);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCardtDetails(id);
@@ -31,7 +32,14 @@ const DetailsCard = () => {
       >
         Add to Cart
       </button>
-      <button>Buy Now </button>
+
+      <button
+        onClick={() => {
+          navigate(`/order/${id}`);
+        }}
+      >
+        Buy Now{" "}
+      </button>
     </div>
   );
 };
