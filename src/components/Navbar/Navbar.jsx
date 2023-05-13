@@ -4,7 +4,7 @@ import basket from "../Images/basket.svg";
 import backetFull from "../Images/Basket-full.svg";
 // import search from "../Images/search.svg";
 import user from "../Images/User.svg";
-import clothing from "../Images/clothing.png";
+import clothing from "../Images/background.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import { useContext } from "react";
@@ -18,7 +18,7 @@ const Navbar = () => {
   console.log(cart.products.length);
 
   const navigate = useNavigate();
-  const { searchCards, searchTerm } = useContext(collectionContext);
+  const { searchCards } = useContext(collectionContext);
   return (
     <div>
       <div className="header">
