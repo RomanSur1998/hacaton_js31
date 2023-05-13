@@ -19,7 +19,7 @@ const CartContextProvider = ({ children }) => {
         })
       );
       cart = {
-        products: [1, 23, 4],
+        products: [],
         totalPrice: 0,
       };
     }

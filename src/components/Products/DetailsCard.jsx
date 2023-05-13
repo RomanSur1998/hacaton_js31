@@ -28,6 +28,7 @@ const DetailsCard = () => {
       <button
         onClick={() => {
           addProductToCart(card);
+          navigate("/");
         }}
       >
         Add to Cart

@@ -10,6 +10,7 @@ const CollectionList = () => {
   useEffect(() => {
     getCards();
   }, []);
+
   // ! а вот та часть которой не хватало
   const cards = searchResults.length ? searchResults : collection;
   console.log(cards);
@@ -32,7 +33,13 @@ const CollectionList = () => {
   console.log(currentData());
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -45,7 +52,7 @@ const CollectionList = () => {
         ))}
       </div>
 
-      <Stack spacing={2}>
+      <Stack spacing={2} style={{ margin: "40px" }}>
         <Pagination
           count={count}
           variant="outlined"
@@ -53,7 +60,7 @@ const CollectionList = () => {
           onChange={handleChange}
         />
       </Stack>
-    </>
+    </div>
   );
 };
 
