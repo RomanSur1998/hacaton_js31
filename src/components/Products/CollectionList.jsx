@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
-import React, { useContext, useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
@@ -80,9 +79,6 @@ const CollectionList = () => {
           : filterCard(cards).map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))}
-        {currentData().map((item) => (
-          <CollectionCard item={item} />
-        ))}
       </div>
 
       <Stack spacing={2}>
