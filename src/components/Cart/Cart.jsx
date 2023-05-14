@@ -1,8 +1,11 @@
 import * as React from "react";
 import { cartContext } from "../../context/CartContextProvider";
 import "../Cart/Cart.css";
+import cancel from "../Images/cancel.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  const navigate = useNavigate();
   const cartCleaner = () => {
     localStorage.removeItem("cart");
     getCart();
@@ -13,6 +16,7 @@ export default function Cart() {
   React.useEffect(() => {
     getCart();
   }, []);
+  console.log(cart.products.length);
   return (
     <>
       <h3>YOU CART</h3>
@@ -46,20 +50,34 @@ export default function Cart() {
                 </button>
               </div>
               <h5>${elem.subPrice}</h5>
-              <button
+              {/* <button
                 onClick={() => {
                   deleteCartProduct(elem.item.id);
                 }}
-              >
-                delete
-              </button>
+              > */}
+              <img
+                src={cancel}
+                alt=""
+                onClick={() => {
+                  deleteCartProduct(elem.item.id);
+                }}
+              />
+              {/* </button> */}
             </div>
           ))}
         </div>
         <div className="cartRight">
           <h5>TOTAL PRICE</h5>
           <h4>${cart?.totalPrice}</h4>
-          <button>BUY ALL</button>
+          <h5>CART COUNT:</h5>
+          <span>{cart.products.length}</span>
+          <button
+            onClick={() => {
+              navigate("/orderall");
+            }}
+          >
+            BUY ALL
+          </button>
           <button onClick={cartCleaner}>CLERAR CART</button>
         </div>
       </div>

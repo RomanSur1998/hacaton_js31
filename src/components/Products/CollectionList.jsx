@@ -79,7 +79,10 @@ const CollectionList = () => {
             ))}
       </div>
 
-      <Stack spacing={2} style={{ margin: "40px" }}>
+      <Stack
+        spacing={2}
+        style={{ margin: "40px", display: "flex", justifyContent: "center" }}
+      >
         <Pagination
           count={count}
           variant="outlined"

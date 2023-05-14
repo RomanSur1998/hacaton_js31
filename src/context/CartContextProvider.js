@@ -51,6 +51,7 @@ const CartContextProvider = ({ children }) => {
     cart.totalPrice = calcTotalPrice(cart.products);
     localStorage.setItem("cart", JSON.stringify(cart));
     setCart(cart);
+    getCart();
   };
 
   const changeProductCount = (count, id) => {
