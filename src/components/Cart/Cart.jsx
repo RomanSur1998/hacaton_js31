@@ -1,20 +1,11 @@
 import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import { cartContext } from "../../context/CartContextProvider";
-import { Button } from "@mui/material";
 import "../Cart/Cart.css";
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+import cancel from "../Images/cancel.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  const navigate = useNavigate();
   const cartCleaner = () => {
     localStorage.removeItem("cart");
     getCart();
@@ -25,67 +16,71 @@ export default function Cart() {
   React.useEffect(() => {
     getCart();
   }, []);
+  console.log(cart.products.length);
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {cart.products.map((row) => (
-            <TableRow
-              key={row.item.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                <img src={row.item.image_1} alt="" width={100} />
-              </TableCell>
-              <TableCell align="right">{row.item.title}</TableCell>
-              <TableCell align="right">
+    <>
+      <h3>YOU CART</h3>
+      <div className="cartContanier">
+        <div className="cartLeft">
+          {cart.products.map((elem) => (
+            <div className="cartElem" key={elem.item.id}>
+              <img src={elem.item.image_1} alt="" width={100} />
+              <h5>{elem.item.title}</h5>
+              <div className="counterBlock">
                 <button
                   onClick={() => {
-                    const newCount = row.count + 1;
+                    const newCount = elem.count + 1;
 
-                    changeProductCount(newCount, row.item.id);
+                    changeProductCount(newCount, elem.item.id);
                   }}
                 >
                   +
                 </button>
-                <span>{row.count}</span>
+                <span>{elem.count}</span>
                 <button
                   onClick={() => {
-                    if (row.count > 1) {
-                      const newCount = row.count - 1;
+                    if (elem.count > 1) {
+                      const newCount = elem.count - 1;
 
-                      changeProductCount(newCount, row.item.id);
+                      changeProductCount(newCount, elem.item.id);
                     }
                   }}
                 >
                   -
                 </button>
-              </TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">
-                <button
-                  onClick={() => {
-                    deleteCartProduct(row.item.id);
-                  }}
-                >
-                  DELETE
-                </button>
-              </TableCell>
-            </TableRow>
+              </div>
+              <h5>${elem.subPrice}</h5>
+              {/* <button
+                onClick={() => {
+                  deleteCartProduct(elem.item.id);
+                }}
+              > */}
+              <img
+                src={cancel}
+                alt=""
+                onClick={() => {
+                  deleteCartProduct(elem.item.id);
+                }}
+              />
+              {/* </button> */}
+            </div>
           ))}
-        </TableBody>
-      </Table>
-      <Button> BUY NOW FOR {cart?.totalPrice} $</Button>
-      <Button onClick={cartCleaner}> CLEAR CART</Button>
-    </TableContainer>
+        </div>
+        <div className="cartRight">
+          <h5>TOTAL PRICE</h5>
+          <h4>${cart?.totalPrice}</h4>
+          <h5>CART COUNT:</h5>
+          <span>{cart.products.length}</span>
+          <button
+            onClick={() => {
+              navigate("/orderall");
+            }}
+          >
+            BUY ALL
+          </button>
+          <button onClick={cartCleaner}>CLERAR CART</button>
+        </div>
+      </div>
+    </>
   );
 }
