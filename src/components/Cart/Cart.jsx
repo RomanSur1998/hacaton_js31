@@ -8,21 +8,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { cartContext } from "../../context/CartContextProvider";
 import { Button } from "@mui/material";
+import "../Cart/Cart.css";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
 export default function Cart() {
-  const [count, setCount] = React.useState(1);
   const cartCleaner = () => {
     localStorage.removeItem("cart");
     getCart();
@@ -56,20 +48,23 @@ export default function Cart() {
               </TableCell>
               <TableCell align="right">{row.item.title}</TableCell>
               <TableCell align="right">
-                {" "}
                 <button
                   onClick={() => {
-                    setCount(count + 1);
-                    changeProductCount(count, row.item.id);
+                    const newCount = row.count + 1;
+
+                    changeProductCount(newCount, row.item.id);
                   }}
                 >
                   +
                 </button>
-                <span>{count}</span>
+                <span>{row.count}</span>
                 <button
                   onClick={() => {
-                    setCount(count - 1);
-                    changeProductCount(count, row.item.id);
+                    if (row.count > 1) {
+                      const newCount = row.count - 1;
+
+                      changeProductCount(newCount, row.item.id);
+                    }
                   }}
                 >
                   -
@@ -89,7 +84,8 @@ export default function Cart() {
           ))}
         </TableBody>
       </Table>
-      <Button onClick={cartCleaner}> BUY NOW FOR {cart?.totalPrice} $</Button>
+      <Button> BUY NOW FOR {cart?.totalPrice} $</Button>
+      <Button onClick={cartCleaner}> CLEAR CART</Button>
     </TableContainer>
   );
 }

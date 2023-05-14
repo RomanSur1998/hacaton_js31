@@ -62,10 +62,6 @@ const CollectionList = () => {
           <option value="brown">Brown</option>
           <option value="red">Red</option>
         </select>
-        {/* <select>
-          <option selected></option>
-          <option>Пункт 2</option>
-        </select> */}
       </div>
       <div
         style={{
@@ -75,7 +71,9 @@ const CollectionList = () => {
         }}
       >
         {filterValue === ""
-          ? cards.map((item) => <CollectionCard item={item} key={item.id} />)
+          ? currentData().map((item) => (
+              <CollectionCard item={item} key={item.id} />
+            ))
           : filterCard(cards).map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))}
