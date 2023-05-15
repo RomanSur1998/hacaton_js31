@@ -8,6 +8,7 @@ import Cart from "../components/Cart/Cart";
 
 import DetailsCard from "../components/Products/DetailsCard";
 import Order from "../components/Order/Order";
+import OrderAll from "../components/Order/OrderAll";
 
 const MainRoutes = () => {
   const COLLECTION_ROUTES = [
@@ -18,6 +19,7 @@ const MainRoutes = () => {
     { link: "/cart", element: <Cart />, id: 5 },
     { link: "/details/:id", element: <DetailsCard />, id: 6 },
     { link: "/order/:id", element: <Order />, id: 7 },
+    { link: "/orderall", element: <OrderAll />, id: 8 },
   ];
   return (
     <>

@@ -4,6 +4,7 @@ import { Pagination } from "@mui/material";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
 import Stack from "@mui/material/Stack";
+import { useLocation } from "react-router-dom";
 
 const CollectionList = () => {
   const { getCards, collection, searchResults } = useContext(collectionContext);
@@ -12,7 +13,8 @@ const CollectionList = () => {
   useEffect(() => {
     getCards();
   }, []);
-
+  const location = useLocation();
+  console.log(location);
   // ! а вот та часть которой не хватало
   const cards = searchResults.length ? searchResults : collection;
   function filterCard(cards) {
