@@ -40,35 +40,6 @@ const CollectionList = () => {
     return cards;
   }
 
-  //! filter function
-  // function filterAllCards(cards) {
-  //   if (filterValue && filterSize) {
-  //     return cards.filter((elem) => {
-  //       if (Array.isArray(elem.color)) {
-  //         return (
-  //           elem.color.includes(filterValue) && elem.size.includes(filterSize)
-  //         );
-  //       }
-  //       return elem.color === filterValue && elem.size === filterSize;
-  //     });
-  //   } else if (filterValue) {
-  //     return cards.filter((elem) => {
-  //       if (Array.isArray(elem.color)) {
-  //         return elem.color.includes(filterValue);
-  //       }
-  //       return elem.color === filterValue;
-  //     });
-  //   } else if (filterSize) {
-  //     return cards.filter((elem) => {
-  //       if (Array.isArray(elem.size)) {
-  //         return elem.size.includes(filterSize);
-  //       }
-  //       return elem.size === filterSize;
-  //     });
-  //   }
-  //   return cards;
-  // }
-
   const [page, setPage] = useState(1);
   const itemPerPage = 6;
   const count = Math.ceil(cards.length / itemPerPage);
@@ -125,7 +96,7 @@ const CollectionList = () => {
           justifyContent: "space-evenly",
         }}
       >
-        {filterValue === ""
+        {filterValue === "" && filterSize === ""
           ? currentData().map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))
