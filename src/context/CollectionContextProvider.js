@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { createContext, useState } from "react";
 import { JSON_API_CLOTHES, JSON_API_OBJECT } from "../helpers/consts";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 export const collectionContext = createContext();
 
 const CollectionContextProvider = ({ children }) => {
@@ -9,7 +9,8 @@ const CollectionContextProvider = ({ children }) => {
   const [collection, setCollection] = useState([]);
   const [oneCard, setOneCard] = useState({});
   const [searchResults, setSearchResults] = useState([]);
-
+  const location = useLocation();
+  console.log(location.pathname);
   async function getCards() {
     let { data } = await axios(JSON_API_CLOTHES);
     setCollection(data);
@@ -27,6 +28,7 @@ const CollectionContextProvider = ({ children }) => {
   const addCard = async (newCard) => {
     await axios.post(JSON_API_CLOTHES, newCard);
     navigate("/");
+    getCards();
   };
 
   const deleteCard = async (id) => {
@@ -36,14 +38,14 @@ const CollectionContextProvider = ({ children }) => {
 
   const editCard = async (newCard) => {
     await axios.patch(`${JSON_API_CLOTHES}/${newCard.id}`, newCard);
-    getCards();
     navigate("/");
+    getCards();
   };
   const getCardtDetails = async (id) => {
     const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
     setOneCard(data);
   };
-    
+
   const values = {
     getCards,
     collection,
@@ -53,7 +55,8 @@ const CollectionContextProvider = ({ children }) => {
     oneCard,
     getCardtDetails,
     searchCards,
-    searchResults
+    searchResults,
+    location,
   };
   return (
     <collectionContext.Provider value={values}>

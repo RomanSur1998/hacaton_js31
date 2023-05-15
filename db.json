@@ -2,9 +2,9 @@
   "1": [
     {
       "id": 1,
-      "title": "The Analog Complete Kit (Maple)",
+      "title": "The Analog Complete Kit (Walnut)",
       "price": 195,
-      "image": "https://cdn.shopify.com/s/files/1/0167/4484/products/analog-complete-kit-maple-analog-bg-gray_400x.jpg?v=1676910266"
+      "image": "https://cdn.shopify.com/s/files/1/0167/4484/products/analog-bg-gray-complete-kit2_400x.jpg?v=1676910279"
     },
     {
       "id": 2,
@@ -307,7 +307,8 @@
       "size": ["S", "M", "XXL"],
       "color": "red",
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-port_800x.jpg?v=1565720192",
-      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-32_400x.jpg?v=1560367444"
+      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-32_400x.jpg?v=1560367444",
+      "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
     },
     {
       "id": 3,
@@ -344,7 +345,7 @@
       "title": "Simplify (Heather Gray Triblend)",
       "price": 10,
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/simplify-gray-1_800x.jpg?v=1624384852",
-      "image_2": "",
+      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/simplify-gray-2_740x918_crop_center.jpg?v=1624384852",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
     },
     {
@@ -373,7 +374,7 @@
       "price": 17,
       "color": "olive",
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/willow-1_800x.jpg?v=1573047795",
-      "image_2": "",
+      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/willow-3_740x918_crop_center.jpg?v=1573047795",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
     },
     {
@@ -432,7 +433,7 @@
       "price": 18,
       "color": "gray",
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/charcoal-triblend-1_800x.jpg?v=1573049026",
-      "image_2": "",
+      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/charcoal-triblend-3_740x918_crop_center.jpg?v=1573049026",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
     },
     {
@@ -527,6 +528,16 @@
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-white_800x.jpg?v=1595986820",
       "image_2": "",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
+    },
+    {
+      "title": "3",
+      "price": 3,
+      "image_1": "12",
+      "image_2": "22",
+      "color": "34",
+      "size": "34",
+      "decr": "ыцук",
+      "id": 26
     }
   ]
 }

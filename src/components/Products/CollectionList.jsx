@@ -4,6 +4,7 @@ import { Pagination } from "@mui/material";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
 import Stack from "@mui/material/Stack";
+import { useLocation } from "react-router-dom";
 
 const CollectionList = () => {
   const { getCards, collection, searchResults } = useContext(collectionContext);
@@ -13,7 +14,8 @@ const CollectionList = () => {
   useEffect(() => {
     getCards();
   }, []);
-
+  const location = useLocation();
+  console.log(location);
   // ! а вот та часть которой не хватало
   const cards = searchResults.length ? searchResults : collection;
   function filterCard(cards) {
@@ -117,6 +119,7 @@ const CollectionList = () => {
           <option value="XL">XL</option>
           <option value="XXL">XXL</option>
         </select>
+
       </div>
       <div
         style={{
@@ -129,13 +132,17 @@ const CollectionList = () => {
           ? currentData().map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))
-          : filterCardSize(filterCard(cards)).map((item) => (
+
+          : filterCardSize(filterCard(cards)).map((item) => 
+          : filterCard(cards).map((item) => (
+
               <CollectionCard item={item} key={item.id} />
             ))}
       </div>
 
       <Stack spacing={2} style={{ margin: "40px" }}>
         <Pagination
+          style={{ margin: "0 auto" }}
           count={count}
           variant="outlined"
           shape="rounded"
