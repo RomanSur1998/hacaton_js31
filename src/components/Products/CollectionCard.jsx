@@ -9,8 +9,14 @@ import Typography from "@mui/material/Typography";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { authContext } from "../../context/AuthContextProvider";
+import { ADMIN } from "../../helpers/consts";
 
 export default function CollectionCard({ item }) {
+  const {
+    user: { email },
+  } = React.useContext(authContext);
+
   const navigate = useNavigate();
   const { deleteCard } = React.useContext(collectionContext);
   const [isHovered, setIsHovered] = useState(false);
@@ -41,23 +47,27 @@ export default function CollectionCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          size="small"
-          onClick={() => navigate(`/edit/${item.id}`)}
-          style={{ color: "white", backgroundColor: "#027373" }}
-        >
-          Edit
-        </Button>
+        {email === ADMIN ? (
+          <>
+            <Button
+              size="small"
+              onClick={() => navigate(`/edit/${item.id}`)}
+              style={{ color: "white", backgroundColor: "#027373" }}
+            >
+              Edit
+            </Button>
 
-        <Button
-          size="small"
-          onClick={() => {
-            deleteCard(item.id);
-          }}
-          style={{ color: "white", backgroundColor: "black" }}
-        >
-          Delete
-        </Button>
+            <Button
+              size="small"
+              onClick={() => {
+                deleteCard(item.id);
+              }}
+              style={{ color: "white", backgroundColor: "black" }}
+            >
+              Delete
+            </Button>
+          </>
+        ) : null}
       </CardActions>
     </Card>
   );

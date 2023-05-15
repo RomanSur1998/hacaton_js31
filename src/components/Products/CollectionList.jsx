@@ -5,6 +5,7 @@ import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
 import Stack from "@mui/material/Stack";
 import { useLocation } from "react-router-dom";
+import { CodeOffSharp } from "@mui/icons-material";
 
 const CollectionList = () => {
   const { getCards, collection, searchResults } = useContext(collectionContext);
@@ -15,9 +16,15 @@ const CollectionList = () => {
     getCards();
   }, []);
   const location = useLocation();
-  console.log(location);
+  console.log(location.pathname);
   // ! а вот та часть которой не хватало
+
   const cards = searchResults.length ? searchResults : collection;
+  const closthes = cards.filter((elem) => {
+    return elem.type === location.pathname;
+  });
+  console.log(closthes);
+  //! filter function
   function filterCard(cards) {
     if (filterValue) {
       return cards.filter((elem) => {
@@ -41,35 +48,6 @@ const CollectionList = () => {
     }
     return cards;
   }
-
-  //! filter function
-  // function filterAllCards(cards) {
-  //   if (filterValue && filterSize) {
-  //     return cards.filter((elem) => {
-  //       if (Array.isArray(elem.color)) {
-  //         return (
-  //           elem.color.includes(filterValue) && elem.size.includes(filterSize)
-  //         );
-  //       }
-  //       return elem.color === filterValue && elem.size === filterSize;
-  //     });
-  //   } else if (filterValue) {
-  //     return cards.filter((elem) => {
-  //       if (Array.isArray(elem.color)) {
-  //         return elem.color.includes(filterValue);
-  //       }
-  //       return elem.color === filterValue;
-  //     });
-  //   } else if (filterSize) {
-  //     return cards.filter((elem) => {
-  //       if (Array.isArray(elem.size)) {
-  //         return elem.size.includes(filterSize);
-  //       }
-  //       return elem.size === filterSize;
-  //     });
-  //   }
-  //   return cards;
-  // }
 
   const [page, setPage] = useState(1);
   const itemPerPage = 6;
@@ -119,7 +97,6 @@ const CollectionList = () => {
           <option value="XL">XL</option>
           <option value="XXL">XXL</option>
         </select>
-
       </div>
       <div
         style={{
@@ -128,14 +105,11 @@ const CollectionList = () => {
           justifyContent: "space-evenly",
         }}
       >
-        {filterValue === ""
+        {filterValue === "" && filterSize === ""
           ? currentData().map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))
-
-          : filterCardSize(filterCard(cards)).map((item) => 
-          : filterCard(cards).map((item) => (
-
+          : filterCardSize(filterCard(cards)).map((item) => (
               <CollectionCard item={item} key={item.id} />
             ))}
       </div>

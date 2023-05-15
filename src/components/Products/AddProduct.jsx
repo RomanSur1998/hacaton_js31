@@ -37,53 +37,53 @@ export default function AddProduct() {
   return (
     <div className={classes.AddContainer}>
       <h4>ADD PRODUCT</h4>
-      <TextField
-        className={classes.input}
-        label="Image"
+      <input
+        className={classes.inpOrder}
+        placeholder="Image-1"
         margin="normal"
         variant="outlined"
         name="image_1"
         onChange={handleInp}
       />
-      <TextField
-        className={classes.input}
-        label="Image"
+      <input
+        className={classes.inpOrder}
+        placeholder="Image-2"
         margin="normal"
         variant="outlined"
         name="image_2"
         onChange={handleInp}
       />
-      <TextField
-        className={classes.input}
-        label="Title"
+      <input
+        className={classes.inpOrder}
+        placeholder="Title"
         margin="normal"
         onChange={handleInp}
         name="title"
       />
-      <TextField
-        className={classes.input}
-        label="Price"
+      <input
+        className={classes.inpOrder}
+        placeholder="Price"
         margin="normal"
         name="price"
         onChange={handleInp}
       />
-      <TextField
-        className={classes.input}
-        label="Color"
+      <input
+        className={classes.inpOrder}
+        placeholder="Color"
         margin="normal"
         onChange={handleInp}
         name="color"
       />
-      <TextField
-        className={classes.input}
-        label="Size"
+      <input
+        className={classes.inpOrder}
+        placeholder="Size"
         margin="normal"
         name="size"
         onChange={handleInp}
       />
-      <TextField
-        className={classes.input}
-        label="Description"
+      <input
+        className={classes.inpOrder}
+        placeholder="Description"
         margin="normal"
         name="decr"
         onChange={handleInp}
