@@ -11,6 +11,7 @@ const AuthContextProvider = ({ children }) => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
+  console.log(user);
 
   const navigate = useNavigate();
 
@@ -73,8 +74,8 @@ const AuthContextProvider = ({ children }) => {
   const authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        clearInputs();
         setUser(user);
+        clearInputs();
       } else {
         setUser("");
       }

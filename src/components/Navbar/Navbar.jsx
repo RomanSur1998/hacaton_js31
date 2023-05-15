@@ -9,8 +9,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import { useContext } from "react";
 import { cartContext } from "../../context/CartContextProvider";
+import { authContext } from "../../context/AuthContextProvider";
 
 const Navbar = () => {
+  const {
+    user: { email },
+    handleLogout,
+  } = React.useContext(authContext);
   const { getCart, cart } = useContext(cartContext);
   console.log(cart);
 
@@ -31,19 +36,19 @@ const Navbar = () => {
             <h1>UGMONK</h1>
           </Link>
           <a href="">Clothing +</a>
-          <Link to="/object">
-            <a href="">Objects +</a>
-          </Link>
 
           <Link to="/add">
             <p>Add Product</p>
           </Link>
         </nav>
         <div className="btns">
-          <input type="text" className="search" onChange={searchCards} />
-          <button>
-            <img src={user} alt="" />
-          </button>
+          <input
+            type="text"
+            className="search"
+            placeholder=" Search....."
+            onChange={searchCards}
+          />
+
           <button>
             <img
               src={!cart.products.length ? basket : backetFull}
@@ -53,6 +58,23 @@ const Navbar = () => {
               }}
             />
           </button>
+          <button>
+            <img src={user} alt="" onClick={() => navigate("/auth")} />
+          </button>
+          <button>{email}</button>
+          {email ? (
+            <>
+              <button
+                style={{ width: "70px" }}
+                className="search"
+                onClick={() => {
+                  handleLogout();
+                }}
+              >
+                Log Out
+              </button>
+            </>
+          ) : null}
         </div>
       </div>
       <img className="clothing" src={clothing} alt="" />

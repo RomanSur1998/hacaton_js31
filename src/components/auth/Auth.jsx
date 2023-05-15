@@ -76,7 +76,7 @@ export default function Auth() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar style={{ backgroundColor: "black" }}>
             <LockOutlinedIcon />
           </Avatar>
           {hasAccount ? (
@@ -109,6 +109,7 @@ export default function Auth() {
               helperText={emailError}
             />
             <TextField
+              style={{ border: "black solis 3px", backgroundColor: "" }}
               margin="normal"
               required
               fullWidth
@@ -131,6 +132,7 @@ export default function Auth() {
                 type="submit"
                 fullWidth
                 variant="contained"
+                style={{ backgroundColor: "black", height: "50px" }}
                 sx={{ mt: 3, mb: 2 }}
                 onClick={() => {
                   handleLogin();
@@ -143,6 +145,7 @@ export default function Auth() {
                 type="submit"
                 fullWidth
                 variant="contained"
+                style={{ backgroundColor: "black", height: "50px" }}
                 sx={{ mt: 3, mb: 2 }}
                 onClick={() => {
                   handleSignUp();
@@ -154,13 +157,14 @@ export default function Auth() {
 
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" style={{ color: "black" }}>
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
                 {hasAccount ? (
                   <Link
+                    style={{ color: "black" }}
                     href="#"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
@@ -171,6 +175,7 @@ export default function Auth() {
                   <Link
                     href="#"
                     variant="body2"
+                    style={{ color: "black" }}
                     onClick={() => setHasAccount(!hasAccount)}
                   >
                     {"Already have an account? Login"}
