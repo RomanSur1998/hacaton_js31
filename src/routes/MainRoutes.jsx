@@ -20,6 +20,7 @@ const MainRoutes = () => {
     { link: "/details/:id", element: <DetailsCard />, id: 6 },
     { link: "/order/:id", element: <Order />, id: 7 },
     { link: "/orderall", element: <OrderAll />, id: 8 },
+    { link: "/object", element: <CollectionList />, id: 8 },
   ];
   return (
     <>
