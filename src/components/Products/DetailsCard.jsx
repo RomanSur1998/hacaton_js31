@@ -23,6 +23,7 @@ const DetailsCard = () => {
       <div>
         <img src={card.image_1} alt="" />
       </div>
+      <div className="sizePAram"> SIZE:{card.size}</div>
       <p>{card.decr}</p>
 
       <button

@@ -2,9 +2,9 @@
   "1": [
     {
       "id": 1,
-      "title": "The Analog Complete Kit (Maple)",
+      "title": "The Analog Complete Kit (Walnut)",
       "price": 195,
-      "image": "https://cdn.shopify.com/s/files/1/0167/4484/products/analog-complete-kit-maple-analog-bg-gray_400x.jpg?v=1676910266"
+      "image": "https://cdn.shopify.com/s/files/1/0167/4484/products/analog-bg-gray-complete-kit2_400x.jpg?v=1676910279"
     },
     {
       "id": 2,
@@ -244,7 +244,8 @@
       "id": 41,
       "title": "Toyo Steel Cantilever Toolbox ST-350 (Blue)",
       "price": 135,
-      "image": "//cdn.shopify.com/s/files/1/0167/4484/products/large-blue-1_400x.jpg?v=1678208230"
+      "image": "//cdn.shopify.com/s/files/1/0167/4484/products/large-blue-1_400x.jpg?v=1678208230",
+      "type": "object"
     },
     {
       "id": 42,
@@ -307,7 +308,8 @@
       "size": ["S", "M", "XXL"],
       "color": "red",
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-port_800x.jpg?v=1565720192",
-      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-32_400x.jpg?v=1560367444"
+      "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-32_400x.jpg?v=1560367444",
+      "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
     },
     {
       "id": 3,
@@ -323,7 +325,7 @@
       "id": 4,
       "title": "Men's Essential Tee (Sage)",
       "price": 16,
-      "size": ["S", "XXL"],
+      "size": "S,XXL,M",
       "color": "yellow",
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/sage-1_800x.jpg?v=1595953075",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/sage-2_400x.jpg?v=1595953075",
@@ -538,6 +540,25 @@
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-white_800x.jpg?v=1595986820",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/white-1_dc279d46-f157-4c3a-b2f2-d4fe77af53ea_400x.jpg?v=1595986820",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
+    },
+    {
+      "id": 26,
+      "title": "Men's Essential Tee (Bright White 3-Pack)",
+      "price": 100,
+      "color": "white",
+      "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-white_800x.jpg?v=1595986820",
+      "image_2": "",
+      "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
+    },
+    {
+      "title": "",
+      "price": "",
+      "image_1": "",
+      "image_2": "",
+      "color": "",
+      "size": "",
+      "decr": "",
+      "id": 27
     },
     {
       "id": 26,

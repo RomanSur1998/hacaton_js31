@@ -4,22 +4,17 @@ import paypal from "../Images/paypal.svg";
 import visa from "../Images/visa.svg";
 import gogpay from "../Images/google-pay.svg";
 import appay from "../Images/apple-pay.svg";
-import { collectionContext } from "../../context/CollectionContextProvider";
-import { useParams } from "react-router-dom";
+import { cartContext } from "../../context/CartContextProvider";
+import cancel from "../Images/cancel.svg";
 
-const Order = () => {
-  const { oneCard, getCardtDetails } = useContext(collectionContext);
-
-  const { id } = useParams();
-  const [card, setCard] = useState(oneCard);
-  console.log(card);
-  useEffect(() => {
-    getCardtDetails(id);
+const OrderAll = () => {
+  const { getCart, cart, changeProductCount, deleteCartProduct } =
+    useContext(cartContext);
+  React.useEffect(() => {
+    getCart();
   }, []);
+  console.log(cart.products.length);
 
-  useEffect(() => {
-    setCard(oneCard);
-  }, [oneCard]);
   return (
     <>
       <div className="orderContainer">
@@ -56,7 +51,7 @@ const Order = () => {
 
             <input
               type="text"
-              placeholder="Apartametn, suite, etc"
+              placeholder="Apartament, suite, etc"
               className="inpOrder"
             />
             <input type="text" placeholder="Address" className="inpOrder" />
@@ -69,14 +64,56 @@ const Order = () => {
           </div>
         </div>
         <div className="rightOrder">
-          <img src={card.image_1} width={400} alt="" />
-          <h5>{card.title}</h5>
-          <h5>SIZE:{card.size}</h5>
-          <h4>${card.price}</h4>
+          {cart.products.map((elem) => (
+            <div className="cartElem" key={elem.item.id}>
+              <img src={elem.item.image_1} alt="" width={100} />
+              <h5>{elem.item.title}</h5>
+              <div className="counterBlock">
+                <button
+                  onClick={() => {
+                    const newCount = elem.count + 1;
+
+                    changeProductCount(newCount, elem.item.id);
+                  }}
+                >
+                  +
+                </button>
+                <span>{elem.count}</span>
+                <button
+                  onClick={() => {
+                    if (elem.count > 1) {
+                      const newCount = elem.count - 1;
+
+                      changeProductCount(newCount, elem.item.id);
+                    }
+                  }}
+                >
+                  -
+                </button>
+              </div>
+              <h5>${elem.subPrice}</h5>
+              {/* <button
+                onClick={() => {
+                  deleteCartProduct(elem.item.id);
+                }}
+              > */}
+              <img
+                src={cancel}
+                alt=""
+                onClick={() => {
+                  deleteCartProduct(elem.item.id);
+                }}
+              />
+              {/* </button> */}
+            </div>
+          ))}
+          <div>
+            TOTAL PRICE: <h4>${cart?.totalPrice}</h4>
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default Order;
+export default OrderAll;

@@ -12,7 +12,7 @@
 }
 .containerDetails p {
   width: 500px;
-  margin: 40px;
+  margin: 20px;
 }
 .containerDetails button {
   width: 400px;
@@ -21,4 +21,10 @@
   margin: 20px;
   color: aliceblue;
   border-radius: 40px;
+}
+.sizePAram {
+  width: 200px;
+  text-align: center;
+  height: 40px;
+  margin-top: 10px;
 }
