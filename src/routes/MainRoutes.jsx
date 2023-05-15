@@ -9,6 +9,7 @@ import Cart from "../components/Cart/Cart";
 import DetailsCard from "../components/Products/DetailsCard";
 import Order from "../components/Order/Order";
 import OrderAll from "../components/Order/OrderAll";
+import Auth from "../components/auth/Auth";
 
 const MainRoutes = () => {
   const COLLECTION_ROUTES = [
@@ -21,6 +22,7 @@ const MainRoutes = () => {
     { link: "/order/:id", element: <Order />, id: 7 },
     { link: "/orderall", element: <OrderAll />, id: 8 },
     { link: "/object", element: <CollectionList />, id: 8 },
+    { link: "/auth", element: <Auth />, id: 9 },
   ];
   return (
     <>

@@ -5,7 +5,7 @@ import backetFull from "../Images/Basket-full.svg";
 
 import user from "../Images/User.svg";
 import clothing from "../Images/background.jpg";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { collectionContext } from "../../context/CollectionContextProvider";
 import { useContext } from "react";
 import { cartContext } from "../../context/CartContextProvider";

@@ -244,7 +244,8 @@
       "id": 41,
       "title": "Toyo Steel Cantilever Toolbox ST-350 (Blue)",
       "price": 135,
-      "image": "//cdn.shopify.com/s/files/1/0167/4484/products/large-blue-1_400x.jpg?v=1678208230"
+      "image": "//cdn.shopify.com/s/files/1/0167/4484/products/large-blue-1_400x.jpg?v=1678208230",
+      "type": "object"
     },
     {
       "id": 42,
@@ -528,16 +529,6 @@
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-white_800x.jpg?v=1595986820",
       "image_2": "",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
-    },
-    {
-      "title": "3",
-      "price": 3,
-      "image_1": "12",
-      "image_2": "22",
-      "color": "34",
-      "size": "34",
-      "decr": "ыцук",
-      "id": 26
     }
   ]
 }
