@@ -7,11 +7,18 @@ import favor from "../Images/icons8-favorites-128.png";
 import { favorContext } from "../../context/FavorContextProvider";
 import axios from "axios";
 import { JSON_API_CLOTHES } from "../../helpers/consts";
+import { authContext } from "../../context/AuthContextProvider";
 const DetailsCard = () => {
   const { id } = useParams();
   const { oneCard, getCardtDetails, getCards } = useContext(collectionContext);
   const { addProductToCart } = useContext(cartContext);
   const { addProductToFavor } = useContext(favorContext);
+  const {
+    user: { email },
+    user,
+  } = useContext(authContext);
+  console.log(user);
+
   const [card, setCard] = useState(oneCard);
   const navigate = useNavigate();
 
@@ -22,40 +29,55 @@ const DetailsCard = () => {
   useEffect(() => {
     setCard(oneCard);
   }, [oneCard]);
-  // const [like, setLike] = useState(card.like ? card.like : 1);
 
-  // const getLike = async (id) => {
-  //   const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
-  //   console.log(data);
-  // };
-  // useEffect(() => {
-  //   const newObj = { ...card, like: like };
-  //   editCard(newObj);
-  // }, [like]);
+  const editCard = async (newObj) => {
+    await axios.patch(`${JSON_API_CLOTHES}/${newObj.id}`, newObj);
+  };
+  // ! ===============
+  const [comments, setComments] = useState(card.comments);
 
-  // const editCard = async (newObj) => {
-  //   await axios.patch(`${JSON_API_CLOTHES}/${newObj.id}`, newObj);
-  //   getLike(card.id);
-  // };
-
+  // ! ---------------
   return (
     <div className="containerDetails">
       <h2>Details</h2>
       <div>
         <img src={card.image_1} alt="" />
       </div>
-      <div className="Like" style={{ display: "flex", alignItems: "center" }}>
-        <button
-          style={{ width: "50px" }}
-          onClick={() => {
-            // setLike(like + 1);
+      {user ? (
+        <div
+          className="Like"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
           }}
         >
-          Like
-        </button>
-        <p>{card.like}</p>
-        <button style={{ width: "50px" }}>DisLike</button>
-      </div>
+          <button
+            style={{ width: "50px", margin: "0" }}
+            onClick={() => {
+              const newCard = { ...card, like: +card.like + 1 };
+              setCard(newCard);
+              editCard(newCard);
+            }}
+          >
+            Like
+          </button>
+          <p style={{ width: "50px", margin: "0", textAlign: "center" }}>
+            {card.like}
+          </p>
+          <button
+            style={{ width: "50px", margin: "0" }}
+            onClick={() => {
+              const newCard = { ...card, like: +card.like - 1 };
+              setCard(newCard);
+              editCard(newCard);
+            }}
+          >
+            Dislike
+          </button>
+        </div>
+      ) : null}
+
       <div className="sizePAram"> SIZE:{card.size}</div>
       <p>{card.decr}</p>
       <div
@@ -91,6 +113,36 @@ const DetailsCard = () => {
           Buy Now{" "}
         </button>
       </div>
+      {user ? (
+        <>
+          <h4>Commetns</h4>
+          <input
+            style={{ width: "300px", height: "50px" }}
+            type="text"
+            placeholder="comments"
+            onChange={(e) => {
+              setComments(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const newObj = { ...card };
+              newObj.comments.push(comments);
+              editCard(newObj);
+            }}
+          >
+            Add Comments
+          </button>
+          <div>
+            {oneCard.comments.map((elem) => (
+              <>
+                <p>{email}</p>
+                <p>{elem}</p>
+              </>
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };
