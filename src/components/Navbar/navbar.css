@@ -17,7 +17,7 @@ h1 {
 }
 
 .header {
-  margin: 30px 180px;
+  margin: 30px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,9 +29,14 @@ nav {
   align-items: center;
 }
 
-nav a {
+nav p {
   font-size: 18px;
   line-height: 24px;
+  transition: 0.1s;
+}
+nav p:hover {
+  border-bottom: 3px solid black;
+  transition: 0.1s;
 }
 
 button img {
@@ -49,8 +54,13 @@ button img {
   height: 35px;
   border: 0.5px solid black;
   border-radius: 20px;
+  border: solid black 2px;
   padding: 7px 9px;
   background-color: rgb(217, 226, 195);
+}
+
+.search:is(:hover, :focus) {
+  outline-offset: 5px;
 }
 
 button {
@@ -60,4 +70,11 @@ button {
 
 .clothing {
   width: 100%;
+}
+.basket {
+  transition: 0.4s;
+}
+.basket:hover {
+  width: 25px;
+  transition: 0.4s;
 }

@@ -10,6 +10,7 @@ import { collectionContext } from "../../context/CollectionContextProvider";
 import { useContext } from "react";
 import { cartContext } from "../../context/CartContextProvider";
 import { authContext } from "../../context/AuthContextProvider";
+import { favorContext } from "../../context/FavorContextProvider";
 
 const Navbar = () => {
   const {
@@ -17,10 +18,14 @@ const Navbar = () => {
     handleLogout,
   } = React.useContext(authContext);
   const { getCart, cart } = useContext(cartContext);
+  const { getFavor, favor } = useContext(favorContext);
   console.log(cart);
 
   useEffect(() => {
     getCart();
+  }, []);
+  useEffect(() => {
+    getFavor();
   }, []);
   console.log(cart.products.length);
 
@@ -35,10 +40,13 @@ const Navbar = () => {
           <Link to="/">
             <h1>UGMONK</h1>
           </Link>
-          <a href="">Clothing +</a>
+          <p>Clothing +</p>
 
           <Link to="/add">
             <p>Add Product</p>
+          </Link>
+          <Link to="/favor">
+            <p>Favorites</p>
           </Link>
         </nav>
         <div className="btns">
@@ -51,6 +59,7 @@ const Navbar = () => {
 
           <button>
             <img
+              className="basket"
               src={!cart.products.length ? basket : backetFull}
               alt=""
               onClick={() => {
@@ -59,9 +68,14 @@ const Navbar = () => {
             />
           </button>
           <button>
-            <img src={user} alt="" onClick={() => navigate("/auth")} />
+            <img
+              src={user}
+              alt=""
+              onClick={() => navigate("/auth")}
+              className="basket"
+            />
           </button>
-          <button>{email}</button>
+          <button style={{ fontSize: "1em" }}>{email}</button>
           {email ? (
             <>
               <button

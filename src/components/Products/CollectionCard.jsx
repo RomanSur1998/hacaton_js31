@@ -29,7 +29,7 @@ export default function CollectionCard({ item }) {
     setIsHovered(false);
   };
   return (
-    <Card sx={{ width: 345, margin: 3 }}>
+    <Card sx={{ width: 345, margin: 3, border: "none", boxShadow: "none" }}>
       <CardMedia
         sx={{ height: 350 }}
         image={isHovered ? item.image_2 : item.image_1}
@@ -52,7 +52,10 @@ export default function CollectionCard({ item }) {
             <Button
               size="small"
               onClick={() => navigate(`/edit/${item.id}`)}
-              style={{ color: "white", backgroundColor: "#027373" }}
+              style={{
+                color: "black",
+                backgroundColor: "rgba(249, 217, 134, 1)",
+              }}
             >
               Edit
             </Button>

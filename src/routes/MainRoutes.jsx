@@ -12,6 +12,7 @@ import OrderAll from "../components/Order/OrderAll";
 import Auth from "../components/auth/Auth";
 import { authContext } from "../context/AuthContextProvider";
 import { ADMIN } from "../helpers/consts";
+import Favor from "../components/Favor/Favor";
 
 const MainRoutes = () => {
   const { user } = useContext(authContext);
@@ -19,13 +20,13 @@ const MainRoutes = () => {
   const COLLECTION_ROUTES = [
     { link: "/", element: <CollectionList />, id: 1 },
     { link: "/admin", element: <AuthPAge />, id: 2 },
-
     { link: "/cart", element: <Cart />, id: 5 },
     { link: "/details/:id", element: <DetailsCard />, id: 6 },
     { link: "/order/:id", element: <Order />, id: 7 },
     { link: "/orderall", element: <OrderAll />, id: 8 },
     { link: "/object", element: <CollectionList />, id: 8 },
     { link: "/auth", element: <Auth />, id: 9 },
+    { link: "/favor", element: <Favor />, id: 10 },
   ];
 
   const ADMIN_ROUTES = [
