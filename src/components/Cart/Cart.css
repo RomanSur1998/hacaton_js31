@@ -60,3 +60,6 @@ h3 {
 .counterBlock button {
   color: aliceblue;
 }
+.cartRight button:last-child {
+  margin-bottom: 40px;
+}
