@@ -22,21 +22,21 @@ const DetailsCard = () => {
   useEffect(() => {
     setCard(oneCard);
   }, [oneCard]);
-  const [like, setLike] = useState(card.like ? card.like : 1);
+  // const [like, setLike] = useState(card.like ? card.like : 1);
 
-  const getLike = async (id) => {
-    const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
-    console.log(data);
-  };
-  useEffect(() => {
-    const newObj = { ...card, like: like };
-    editCard(newObj);
-  }, [like]);
+  // const getLike = async (id) => {
+  //   const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
+  //   console.log(data);
+  // };
+  // useEffect(() => {
+  //   const newObj = { ...card, like: like };
+  //   editCard(newObj);
+  // }, [like]);
 
-  const editCard = async (newObj) => {
-    await axios.patch(`${JSON_API_CLOTHES}/${newObj.id}`, newObj);
-    getLike(card.id);
-  };
+  // const editCard = async (newObj) => {
+  //   await axios.patch(`${JSON_API_CLOTHES}/${newObj.id}`, newObj);
+  //   getLike(card.id);
+  // };
 
   return (
     <div className="containerDetails">
@@ -48,7 +48,7 @@ const DetailsCard = () => {
         <button
           style={{ width: "50px" }}
           onClick={() => {
-            setLike(like + 1);
+            // setLike(like + 1);
           }}
         >
           Like
