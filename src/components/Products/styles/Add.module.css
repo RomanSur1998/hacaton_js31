@@ -1,7 +1,12 @@
 .AddContainer {
+  margin: 20px auto;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: rgba(249, 217, 134, 1);
 }
 h4 {
   margin: 20px;
