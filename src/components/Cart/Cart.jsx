@@ -50,11 +50,7 @@ export default function Cart() {
                 </button>
               </div>
               <h5>${elem.subPrice}</h5>
-              {/* <button
-                onClick={() => {
-                  deleteCartProduct(elem.item.id);
-                }}
-              > */}
+
               <img
                 src={cancel}
                 alt=""

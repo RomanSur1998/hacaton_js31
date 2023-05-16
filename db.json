@@ -356,7 +356,11 @@
       "title": "Men's Essential Tee (Port 5-Pack)",
       "price": 80,
       "size": ["S", "M", "XXL"],
+
       "color": "red",
+
+      "color": ["maroon", "red"],
+
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/5-pack-port_800x.jpg?v=1565709739",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-port-1_5ba2d88d-73a5-4744-854e-a6a127cb99bd_400x.jpg?v=1565709739",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
@@ -366,7 +370,11 @@
       "title": "Men's Essential Tee (Sage 5-Pack)",
       "price": 80,
       "size": ["S", "XXL"],
+
       "color": ["olive", "yellow"],
+
+      "color": "yellow",
+
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/5-pack-sage_800x.jpg?v=1595970201",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/sage-1_b5348257-0811-47ce-8e98-bc4be7173120_400x.jpg?v=1595970201",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
@@ -396,7 +404,11 @@
       "title": "More Than Meets the Eye (Smoke Triblend)",
       "price": 18,
       "size": ["M", "XL", "XXL"],
+
       "color": ["gray", "black"],
+
+      "color": "gray",
+
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/more-than-smoke-1_800x.jpg?v=1624383965",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/more-than-smoke-2_400x.jpg?v=1624383965",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
@@ -416,7 +428,11 @@
       "title": "More Than Meets the Eye (Bone)",
       "price": 18,
       "size": ["M", "L", "XL", "XXL"],
+
       "color": ["gray", "white"],
+
+      "color": "gray",
+
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/more-than-bone-1_800x.jpg?v=1624384162",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/more-than-bone-2_400x.jpg?v=1624384162",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
@@ -466,7 +482,10 @@
       "title": "Men's Essential Tee (Triblend Kit - 3-Pack)",
       "price": 60,
       "color": ["black", "gray"],
+
       "size": ["L", "XL", "M", "S"],
+
+
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/triblend-3-pack_800x.jpg?v=1573047749",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-7_400x.jpg?v=1573055045",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
@@ -505,7 +524,10 @@
       "id": 22,
       "title": "Men's Essential Tee (Summer Kit - 3-Pack)",
       "price": 48,
+
       "size": ["L", "XS", "XXL", "M"],
+
+
       "color": ["gray", "olive", "yellow", "brown"],
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/summer-kit-bundle_800x.jpg?v=1596036665",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/canyon-1_8860cf50-4d94-4462-82e6-0aca6c2da608_400x.jpg?v=1596036665",
@@ -662,6 +684,7 @@
       "id": 39,
       "title": "5-pack Slim Fit T-shirts",
       "price": 100,
+
       "color": ["white", "yellow", "olive", "brown"],
       "size": ["S", "XS", "M", "XXL", "L"],
       "image_1": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F89%2Fb1%2F89b1e7817f344047b47ddcc69d869ba93a10480a.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_multipacks%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
@@ -729,6 +752,12 @@
       "size": ["XS", "S", "M", "XL", "L", "XXL"],
       "image_1": "https://oldnavy.gap.com/webcontent/0052/485/007/cn52485007.jpg",
       "image_2": "https://oldnavy.gap.com/webcontent/0052/982/813/cn52982813.jpg"
+
+      "color": "white",
+      "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-white_800x.jpg?v=1595986820",
+      "image_2": "",
+      "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
+
     }
   ]
 }
