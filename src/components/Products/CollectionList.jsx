@@ -5,6 +5,7 @@ import { collectionContext } from "../../context/CollectionContextProvider";
 import CollectionCard from "./CollectionCard";
 import Stack from "@mui/material/Stack";
 import { useLocation } from "react-router-dom";
+import "./styles/CollectionList.css";
 import { CodeOffSharp } from "@mui/icons-material";
 
 const CollectionList = () => {
@@ -67,10 +68,9 @@ const CollectionList = () => {
 
   return (
     <div>
-      <div style={{ display: "flex", margin: "20px 400px", columnGap: "50px" }}>
+      <div className="main">
         <p>Filter: </p>
         <select
-          style={{ border: "none" }}
           value={filterValue}
           onChange={(e) => setFilterValue(e.target.value)}
         >
@@ -85,7 +85,6 @@ const CollectionList = () => {
           <option value="red">Red</option>
         </select>
         <select
-          style={{ border: "none" }}
           value={filterSize}
           onChange={(e) => setFilterSize(e.target.value)}
         >
@@ -98,13 +97,7 @@ const CollectionList = () => {
           <option value="XXL">XXL</option>
         </select>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-        }}
-      >
+      <div className="cards">
         {filterValue === "" && filterSize === ""
           ? currentData().map((item) => (
               <CollectionCard item={item} key={item.id} />

@@ -11,6 +11,9 @@ import { useContext } from "react";
 import { cartContext } from "../../context/CartContextProvider";
 import { authContext } from "../../context/AuthContextProvider";
 import { favorContext } from "../../context/FavorContextProvider";
+import { useState } from "react";
+import burgerIcon from "../Images/burger-menu.svg";
+import ugmonk from "../Images/ugmonk.png";
 
 const Navbar = () => {
   const {
@@ -19,6 +22,7 @@ const Navbar = () => {
   } = React.useContext(authContext);
   const { getCart, cart } = useContext(cartContext);
   const { getFavor, favor } = useContext(favorContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   console.log(cart);
 
   useEffect(() => {
@@ -35,12 +39,60 @@ const Navbar = () => {
 
   return (
     <div>
+      {isMenuOpen && (
+        <div className="menu">
+          <Link to="/">
+            <p>Clothing +</p>
+          </Link>
+          <Link to="/add">
+            <p>Add Product</p>
+          </Link>
+          <Link to="/favor">
+            <p>Favorites</p>
+          </Link>
+          <div className="btns-2">
+            <button>
+              <img
+                className="basket"
+                src={!cart.products.length ? basket : backetFull}
+                alt=""
+                onClick={() => {
+                  navigate("/cart");
+                }}
+              />
+            </button>
+            <button>
+              <img
+                src={user}
+                alt=""
+                onClick={() => navigate("/auth")}
+                className="basket"
+              />
+            </button>
+            <button style={{ fontSize: "1em" }}>{email}</button>
+            {email ? (
+              <>
+                <button
+                  style={{ width: "70px" }}
+                  className="search"
+                  onClick={() => {
+                    handleLogout();
+                  }}
+                >
+                  Log Out
+                </button>
+              </>
+            ) : null}
+          </div>
+        </div>
+      )}
       <div className="header">
+        <img src={ugmonk} alt="" className="logo" />
+        <h1>UGMONK</h1>
         <nav>
           <Link to="/">
-            <h1>UGMONK</h1>
+            <p>Clothing +</p>
           </Link>
-          <p>Clothing +</p>
 
           <Link to="/add">
             <p>Add Product</p>
@@ -89,6 +141,9 @@ const Navbar = () => {
               </button>
             </>
           ) : null}
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <img src={burgerIcon} alt="Burger Menu" className="burger-icon" />
+          </button>
         </div>
       </div>
       <img className="clothing" src={clothing} alt="" />
