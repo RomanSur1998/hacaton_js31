@@ -10,16 +10,16 @@ import { JSON_API_CLOTHES } from "../../helpers/consts";
 import { authContext } from "../../context/AuthContextProvider";
 const DetailsCard = () => {
   const { id } = useParams();
-  const { oneCard, getCardtDetails, getCards } = useContext(collectionContext);
+  const { oneCard, getCardtDetails } = useContext(collectionContext);
   const { addProductToCart } = useContext(cartContext);
   const { addProductToFavor } = useContext(favorContext);
   const {
     user: { email },
     user,
   } = useContext(authContext);
-  console.log(user);
 
   const [card, setCard] = useState(oneCard);
+  console.log(oneCard);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const DetailsCard = () => {
   };
   // ! ===============
   const [comments, setComments] = useState(card.comments);
+  console.log(card);
 
   // ! ---------------
   return (
@@ -124,22 +125,39 @@ const DetailsCard = () => {
               setComments(e.target.value);
             }}
           />
-          <button
-            onClick={() => {
-              const newObj = { ...card };
-              newObj.comments.push(comments);
-              editCard(newObj);
-            }}
-          >
-            Add Comments
-          </button>
+          {!card.hasOwnProperty("comments") ? (
+            <button
+              onClick={() => {
+                const newObj = { ...card, comments: [] };
+                newObj.comments.push(comments);
+                editCard(newObj);
+                setCard(newObj);
+              }}
+            >
+              Add Comments
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                const newObj = { ...card };
+                newObj.comments.push(comments);
+                editCard(newObj);
+                setCard(newObj);
+              }}
+            >
+              Add Comments
+            </button>
+          )}
+
           <div>
-            {oneCard.comments.map((elem) => (
-              <>
-                <p>{email}</p>
-                <p>{elem}</p>
-              </>
-            ))}
+            {card.hasOwnProperty("comments")
+              ? card.comments.map((elem) => (
+                  <div key={elem.id}>
+                    <p>{email}</p>
+                    <p>{elem}</p>
+                  </div>
+                ))
+              : null}
           </div>
         </>
       ) : null}
