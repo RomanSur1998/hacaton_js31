@@ -51,10 +51,10 @@
 }
 
 @media (max-width: 426px) {
-  img {
+  .containerDetails img {
     width: 300px;
   }
-  p {
+  .containerDetails p {
     width: 300px;
   }
   .commentsBlock {
