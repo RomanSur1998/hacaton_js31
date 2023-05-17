@@ -82,6 +82,7 @@ const DetailsCard = () => {
       <div className="sizePAram"> SIZE:{card.size}</div>
       <p>{card.decr}</p>
       <div
+        className="btnblock"
         style={{
           display: "flex",
           alignItems: "center",
@@ -118,15 +119,17 @@ const DetailsCard = () => {
         <>
           <h4>Commetns</h4>
           <input
-            style={{ width: "300px", height: "50px" }}
+            className="commetnsInp"
+            // style={{ width: "300px", height: "50px" }}
             type="text"
-            placeholder="comments"
+            placeholder="Comments"
             onChange={(e) => {
               setComments(e.target.value);
             }}
           />
           {!card.hasOwnProperty("comments") ? (
             <button
+              className="commentsBtn"
               onClick={() => {
                 const newObj = { ...card, comments: [] };
                 newObj.comments.push(comments);
@@ -138,6 +141,7 @@ const DetailsCard = () => {
             </button>
           ) : (
             <button
+              className="commentsBtn"
               onClick={() => {
                 const newObj = { ...card };
                 newObj.comments.push(comments);
@@ -150,11 +154,12 @@ const DetailsCard = () => {
           )}
 
           <div>
+            <h4>User Comments:</h4>
             {card.hasOwnProperty("comments")
               ? card.comments.map((elem) => (
-                  <div key={elem.id}>
-                    <p>{email}</p>
-                    <p>{elem}</p>
+                  <div key={elem.id} className="commentsBlock">
+                    <p>User: {email}</p>
+                    <p>Comments: {elem}</p>
                   </div>
                 ))
               : null}

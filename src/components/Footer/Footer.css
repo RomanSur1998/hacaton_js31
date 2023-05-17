@@ -31,3 +31,20 @@
   width: 40px;
   margin: 10px;
 }
+@media (max-width: 426px) {
+  .footercontanier {
+    background-color: rgb(250, 250, 242);
+    flex-direction: column;
+  }
+  .footerRight {
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(250, 250, 242);
+  }
+  .footerLeft {
+    width: 100%;
+  }
+}
