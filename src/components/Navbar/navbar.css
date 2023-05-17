@@ -163,6 +163,11 @@ button {
   h1 {
     display: none;
   }
+  .menu {
+    right: 40px;
+    row-gap: 20px;
+    top: 67px;
+  }
 }
 
 @media (max-width: 376px) {
@@ -174,5 +179,10 @@ button {
 @media (max-width: 321px) {
   .header {
     margin: 20px 25px;
+  }
+  .menu {
+    right: 20px;
+    row-gap: 15px;
+    top: 67px;
   }
 }
