@@ -109,7 +109,7 @@ const CollectionList = () => {
 
       <Stack spacing={2} style={{ margin: "40px" }}>
         <Pagination
-          style={{ margin: "0 auto" }}
+          style={{ margin: "0 auto", display: "block" }}
           count={count}
           variant="outlined"
           shape="rounded"

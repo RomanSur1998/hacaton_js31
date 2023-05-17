@@ -41,9 +41,15 @@ const Navbar = () => {
     <div>
       {isMenuOpen && (
         <div className="menu">
-          <Link to="/">
-            <p>Clothing +</p>
-          </Link>
+          {/* <Link to="/"> */}
+          <p
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Clothing +
+          </p>
+          {/* </Link> */}
           <Link to="/add">
             <p>Add Product</p>
           </Link>
@@ -131,7 +137,7 @@ const Navbar = () => {
           {email ? (
             <>
               <button
-                style={{ width: "70px" }}
+                style={{ width: "80px" }}
                 className="search"
                 onClick={() => {
                   handleLogout();

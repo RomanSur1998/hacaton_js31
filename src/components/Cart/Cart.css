@@ -63,3 +63,22 @@ h3 {
 .cartRight button:last-child {
   margin-bottom: 40px;
 }
+@media (max-width: 770px) {
+  .cartContanier {
+    flex-direction: column;
+  }
+  .cartRight {
+    width: 100%;
+  }
+  .cartLeft {
+    width: 96%;
+    margin: 10px auto;
+  }
+  .cartElem {
+    font-size: small;
+  }
+  .cartElem img {
+    width: 50px;
+    margin-left: 5px;
+  }
+}
