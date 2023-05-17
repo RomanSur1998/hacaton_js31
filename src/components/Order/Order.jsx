@@ -5,9 +5,10 @@ import visa from "../Images/visa.svg";
 import gogpay from "../Images/google-pay.svg";
 import appay from "../Images/apple-pay.svg";
 import { collectionContext } from "../../context/CollectionContextProvider";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Order = () => {
+  const navigate = useNavigate();
   const { oneCard, getCardtDetails } = useContext(collectionContext);
 
   const { id } = useParams();
@@ -65,7 +66,13 @@ const Order = () => {
               <input type="text" placeholder="Last Name" className="city" />
             </div>
             <input type="text" placeholder="Phone" className="inpOrder" />
-            <button>Contunie to shipping</button>
+            <button
+              onClick={() => {
+                navigate("/credit");
+              }}
+            >
+              Contunie to shipping
+            </button>
           </div>
         </div>
         <div className="rightOrder">

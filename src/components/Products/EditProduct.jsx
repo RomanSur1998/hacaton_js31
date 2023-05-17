@@ -42,7 +42,13 @@ export default function EditProduct() {
     <div className={classes.AddContainer}>
       <h4>EDIT PRODUCT</h4>
       <TextField
-        style={{ border: "none" }}
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
+        // style={{ border: "none" }}
         className={classes.input}
         margin="normal"
         variant="outlined"
@@ -51,6 +57,12 @@ export default function EditProduct() {
         onChange={handleInp}
       />
       <TextField
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
         className={classes.input}
         value={card.image_2}
         margin="normal"
@@ -59,6 +71,12 @@ export default function EditProduct() {
         onChange={handleInp}
       />
       <TextField
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
         className={classes.input}
         value={card.title}
         margin="normal"
@@ -66,6 +84,12 @@ export default function EditProduct() {
         name="title"
       />
       <TextField
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
         className={classes.input}
         value={card.price}
         margin="normal"
@@ -73,6 +97,12 @@ export default function EditProduct() {
         onChange={handleInp}
       />
       <TextField
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
         className={classes.input}
         value={card.color}
         margin="normal"
@@ -80,6 +110,12 @@ export default function EditProduct() {
         name="color"
       />
       <TextField
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
         className={classes.input}
         value={card.size}
         margin="normal"
@@ -87,6 +123,12 @@ export default function EditProduct() {
         onChange={handleInp}
       />
       <TextField
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderRadius: "5px",
+        }}
         className={classes.input}
         value={card.decr}
         margin="normal"

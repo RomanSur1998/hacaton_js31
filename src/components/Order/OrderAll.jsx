@@ -6,8 +6,10 @@ import gogpay from "../Images/google-pay.svg";
 import appay from "../Images/apple-pay.svg";
 import { cartContext } from "../../context/CartContextProvider";
 import cancel from "../Images/cancel.svg";
+import { useNavigate } from "react-router-dom";
 
 const OrderAll = () => {
+  const navigate = useNavigate();
   const { getCart, cart, changeProductCount, deleteCartProduct } =
     useContext(cartContext);
   React.useEffect(() => {
@@ -60,7 +62,13 @@ const OrderAll = () => {
               <input type="text" placeholder="Last Name" className="city" />
             </div>
             <input type="text" placeholder="Phone" className="inpOrder" />
-            <button>Contunie to shipping</button>
+            <button
+              onClick={() => {
+                navigate("/credit");
+              }}
+            >
+              Contunie to shipping
+            </button>
           </div>
         </div>
         <div className="rightOrder">
