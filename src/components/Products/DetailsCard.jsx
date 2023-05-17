@@ -7,6 +7,7 @@ import favor from "../Images/icons8-favorites-128.png";
 import { favorContext } from "../../context/FavorContextProvider";
 import axios from "axios";
 import { JSON_API_CLOTHES } from "../../helpers/consts";
+
 import { authContext } from "../../context/AuthContextProvider";
 const DetailsCard = () => {
   const { id } = useParams();
@@ -53,7 +54,30 @@ const DetailsCard = () => {
             justifyContent: "space-around",
           }}
         >
-          <button
+          {card.hasOwnProperty("like") ? (
+            <button
+              style={{ width: "50px", margin: "0" }}
+              onClick={() => {
+                const newCard = { ...card, like: +card.like + 1 };
+                setCard(newCard);
+                editCard(newCard);
+              }}
+            >
+              Like
+            </button>
+          ) : (
+            <button
+              style={{ width: "50px", margin: "0" }}
+              onClick={() => {
+                const newCard = { ...card, like: 0 };
+                setCard(newCard);
+                editCard(newCard);
+              }}
+            >
+              Like
+            </button>
+          )}
+          {/* <button
             style={{ width: "50px", margin: "0" }}
             onClick={() => {
               const newCard = { ...card, like: +card.like + 1 };
@@ -62,7 +86,7 @@ const DetailsCard = () => {
             }}
           >
             Like
-          </button>
+          </button> */}
           <p style={{ width: "50px", margin: "0", textAlign: "center" }}>
             {card.like}
           </p>
