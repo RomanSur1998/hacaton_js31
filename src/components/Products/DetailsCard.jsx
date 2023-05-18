@@ -182,6 +182,7 @@ const DetailsCard = () => {
             {card.hasOwnProperty("comments")
               ? card.comments.map((elem) => (
                   <div key={elem.id} className="commentsBlock">
+                    <p style={{ fontSize: "0.8em" }}>Data: {Date()}</p>
                     <p>User: {email}</p>
                     <p>Comments: {elem}</p>
                   </div>

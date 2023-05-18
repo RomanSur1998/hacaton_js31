@@ -137,7 +137,7 @@ const Navbar = () => {
           {email ? (
             <>
               <button
-                style={{ width: "80px" }}
+                style={{ width: "80px", padding: "0" }}
                 className="search"
                 onClick={() => {
                   handleLogout();
