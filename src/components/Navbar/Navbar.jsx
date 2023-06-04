@@ -31,7 +31,6 @@ const Navbar = () => {
   useEffect(() => {
     getFavor();
   }, []);
-  console.log(cart.products.length);
 
   const navigate = useNavigate();
 
