@@ -302,15 +302,13 @@
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred.",
       "like": 10,
       "comments": [
-        "12232334",
-        "121212212",
-        "Оставил отзыв "
+        "Что-то"
       ]
     },
     {
       "id": 2,
-      "title": "Men's Essential Tee (Port 3-Pack)",
-      "price": 48,
+      "title": "Men's Essential Tee (Port 3-Pack)12112",
+      "price": 23,
       "size": [
         "S",
         "M",
@@ -320,7 +318,7 @@
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/3-pack-port_800x.jpg?v=1565720192",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-32_400x.jpg?v=1560367444",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred.",
-      "like": 5,
+      "like": 10,
       "comments": [
         "23456",
         "23456",
@@ -376,7 +374,8 @@
       "like": 17,
       "comments": [
         "1221324234",
-        "1243565"
+        "1243565",
+        "1222"
       ]
     },
     {
@@ -578,7 +577,10 @@
       "color": "blue",
       "image_1": "https://cdn.shopify.com/s/files/1/0167/4484/products/essnetial-scarab-1_800x.jpg?v=1605812915",
       "image_2": "https://cdn.shopify.com/s/files/1/0167/4484/products/essential-model-74_400x.jpg?v=1605812915",
-      "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred."
+      "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred.",
+      "comments": [
+        "1"
+      ]
     },
     {
       "id": 18,
@@ -1019,7 +1021,7 @@
     },
     {
       "id": 45,
-      "like": 2,
+      "like": 4,
       "title": "Soft-Washed V-Neck T-Shirt 3-Pack for Men",
       "price": 40,
       "color": [
@@ -1056,17 +1058,6 @@
       "image_2": "https://oldnavy.gap.com/webcontent/0052/982/813/cn52982813.jpg",
       "decr": "The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles, California. The tees are then enzyme washed for added softness and garment dyed to our own custom colors. The garment dye process creates subtle variations of color, making each tee truly unique. Since the tees are pre-shrunk, they will fit the same on day one as day one hundred.",
       "like": 11
-    },
-    {
-      "title": "1",
-      "price": 1,
-      "image_1": "1",
-      "image_2": "`1",
-      "color": "2",
-      "size": "3",
-      "decr": "4",
-      "id": 47,
-      "like": 12
     }
   ]
 }

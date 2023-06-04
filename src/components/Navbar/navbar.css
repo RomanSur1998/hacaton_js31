@@ -146,6 +146,7 @@ button {
     display: flex;
   }
   .menu {
+    text-align: center;
     display: block;
     position: absolute;
     right: 20px;
@@ -181,8 +182,13 @@ button {
     margin: 20px 25px;
   }
   .menu {
+    text-align: center;
+
     right: 20px;
     row-gap: 15px;
     top: 67px;
+  }
+  .clothing {
+    display: none;
   }
 }

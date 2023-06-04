@@ -31,7 +31,6 @@ const Navbar = () => {
   useEffect(() => {
     getFavor();
   }, []);
-  console.log(cart.products.length);
 
   const navigate = useNavigate();
 
@@ -137,7 +136,7 @@ const Navbar = () => {
           {email ? (
             <>
               <button
-                style={{ width: "80px" }}
+                style={{ width: "80px", padding: "0" }}
                 className="search"
                 onClick={() => {
                   handleLogout();

@@ -69,7 +69,7 @@ const CollectionList = () => {
   return (
     <div>
       <div className="main">
-        <p>Filter: </p>
+        <p style={{ marginBottom: "0" }}>Filter: </p>
         <select
           value={filterValue}
           onChange={(e) => setFilterValue(e.target.value)}
