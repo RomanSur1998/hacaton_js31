@@ -13,7 +13,7 @@ import Auth from "../components/auth/Auth";
 import { authContext } from "../context/AuthContextProvider";
 import { ADMIN } from "../helpers/consts";
 import Favor from "../components/Favor/Favor";
-import CreditCard from "../components/Products/CreditCard";
+// import CreditCard from "../components/Products/CreditCard";
 
 const MainRoutes = () => {
   const { user } = useContext(authContext);
@@ -28,7 +28,7 @@ const MainRoutes = () => {
     { link: "/object", element: <CollectionList />, id: 8 },
     { link: "/auth", element: <Auth />, id: 9 },
     { link: "/favor", element: <Favor />, id: 10 },
-    { link: "/credit", element: <CreditCard />, id: 11 },
+    // { link: "/credit", element: <CreditCard />, id: 11 },
   ];
 
   const ADMIN_ROUTES = [
