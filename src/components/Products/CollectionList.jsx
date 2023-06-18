@@ -7,11 +7,13 @@ import Stack from "@mui/material/Stack";
 import { useLocation } from "react-router-dom";
 import "./styles/CollectionList.css";
 import { CodeOffSharp } from "@mui/icons-material";
+import { logDOM } from "@testing-library/react";
 
 const CollectionList = () => {
   const { getCards, collection, searchResults } = useContext(collectionContext);
   const [filterValue, setFilterValue] = useState("");
   const [filterSize, setFilterSize] = useState("");
+
   console.log(filterSize);
   useEffect(() => {
     getCards();
@@ -21,10 +23,10 @@ const CollectionList = () => {
   // ! а вот та часть которой не хватало
 
   const cards = searchResults.length ? searchResults : collection;
-  const closthes = cards.filter((elem) => {
-    return elem.type === location.pathname;
-  });
-  console.log(closthes);
+  // const closthes = cards.filter((elem) => {
+  //   return elem.type === location.pathname;
+  // });
+
   //! filter function
   function filterCard(cards) {
     if (filterValue) {

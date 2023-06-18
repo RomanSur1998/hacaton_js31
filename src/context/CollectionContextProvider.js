@@ -11,6 +11,7 @@ const CollectionContextProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState([]);
   const location = useLocation();
   console.log(location.pathname);
+
   async function getCards() {
     let { data } = await axios(JSON_API_CLOTHES);
     setCollection(data);
@@ -45,6 +46,18 @@ const CollectionContextProvider = ({ children }) => {
     const { data } = await axios(`${JSON_API_CLOTHES}/${id}`);
     setOneCard(data);
   };
+
+  const [res, setRes] = useState({});
+  console.log("ответ запроса ", res);
+  async function test() {
+    try {
+      const res = await axios.get(JSON_API_CLOTHES);
+      setRes(res);
+    } catch (error) {
+      console.log("ошибка при запросе на vercel");
+    }
+  }
+  test();
 
   const values = {
     getCards,
