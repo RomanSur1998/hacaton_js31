@@ -47,18 +47,6 @@ const CollectionContextProvider = ({ children }) => {
     setOneCard(data);
   };
 
-  // const [res, setRes] = useState({});
-  // console.log("ответ запроса ", res);
-  // async function test() {
-  //   try {
-  //     const res = await axios.get(JSON_API_CLOTHES);
-  //     setRes(res);
-  //   } catch (error) {
-  //     console.log("ошибка при запросе на vercel");
-  //   }
-  // }
-  // test();
-
   const values = {
     getCards,
     collection,
