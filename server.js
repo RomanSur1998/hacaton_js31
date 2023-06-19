@@ -1,6 +1,6 @@
 import { create, router as _router, defaults } from "json-server";
 const server = create();
-const router = _router("./db.json");
+const router = _router("./hacaton_js31/db.json");
 const middlewares = defaults({
   static: "./build",
 });
